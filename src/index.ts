@@ -1,2 +1,4 @@
-import dotenv from "dotenv";
-dotenv.config();
+import {app} from "./app"
+import { addStudent } from "./endpoints/addStudent"
+
+app.post("/createStudent", addStudent);
