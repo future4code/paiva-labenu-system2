@@ -1,16 +1,16 @@
 import { connection } from "../connection"
 
-export const createStudent = async (
+export const createTeacher = async (
     id: number, 
     name: string, 
     email: string, 
     birth_date: string, 
-    hobbies: string
+    
     ): Promise<void> => {
         await connection.raw(`
-        INSERT INTO student_labenu 
-        (id, name, email, birth_date, hobbies)
-        VALUES ('${id}', '${name}', '${email}', '${birth_date}', '${hobbies}')
+        INSERT INTO teachers_labenu 
+        (id, name, email, birth_date)
+        VALUES ('${id}', '${name}', '${email}', '${birth_date}')
         `
                 
         )
