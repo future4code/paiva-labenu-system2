@@ -1,17 +1,18 @@
 import { connection } from "../connection"
 
 export const createStudent = async (
-    id: number, 
-    name: string, 
-    email: string, 
-    birth_date: string, 
-    hobbies: string
-    ): Promise<void> => {
-        await connection.raw(`
-        INSERT INTO student_labenu 
-        (id, name, email, birth_date, hobbies)
-        VALUES ('${id}', '${name}', '${email}', '${birth_date}', '${hobbies}')
-        `
-                
-        )
-     }
+  
+    name: string,
+    email: string,
+    birth_date: Date,
+  
+): Promise<void> => {
+    await connection('student_labenu').insert({
+        id: 1,
+        name,
+        email,
+        birth_date,
+        class_id: '1'
+     
+    })
+}

@@ -8,10 +8,10 @@ export const createTeacher = async (
     
     ): Promise<void> => {
         await connection.raw(`
-        INSERT INTO teachers_labenu 
-        (id, name, email, birth_date)
-        VALUES ('${id}', '${name}', '${email}', '${birth_date}')
+        INSERT INTO teacher_labenu 
+        (id, name, email, birth_date, class_id)
+        VALUES ('${id}', '${name}', '${email}', '${birth_date}', '1')
         `
                 
-        )
+        );
      }
