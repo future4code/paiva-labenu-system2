@@ -3,14 +3,15 @@ import { createClass } from '../data/createClass';
 
 
 
-export const addClass = async (req:Request, res:Response) => {
+export const addClass = async (req:Request, res:Response): Promise<void> => {
     try {
+
+        const {name, start_date, end_date, module} = req.body
         await createClass(
-            req.body.id,
-            req.body.name,
-            req.body.start_date,
-            req.body.end_date
-            
+            name,
+            start_date,
+            end_date,
+            module
             );        
         
 

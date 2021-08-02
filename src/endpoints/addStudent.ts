@@ -6,14 +6,12 @@ import {Request, Response} from "express";
 
 export const addStudent = async (req:Request, res:Response) => {
     try {
+        const {name, email, birth_date} = req.body
         await createStudent(
-            req.body.id,
-            req.body.name,
-            req.body.email,
-            req.body.birth_date,
-            req.body.hobbies
-
-            );        
+            name,
+            email,
+            birth_date,
+        );        
         
 
         res.status(200).send("Estudante criado com sucesso!")

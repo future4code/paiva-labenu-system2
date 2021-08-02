@@ -1,16 +1,19 @@
 import { connection } from "../connection"
 
 export const createClass = async (
-    id: number, 
     name: string, 
     start_date: string, 
-    end_date: string
+    end_date: string,
+    module: number
     ): Promise<void> => {
-        await connection.raw(`
-        INSERT INTO class_labenu 
-        (id, name, start_date, end_date)
-        VALUES ('${id}', '${name}', '${start_date}', '${end_date}')
-        `
-                
-        )
+        await connection ('class_labenu').insert ({
+            id: 1,
+            name,
+            start_date,
+            end_date,
+            module
+        })
+        
+        
+    
      }
