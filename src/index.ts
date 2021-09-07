@@ -1,12 +1,21 @@
 import {app} from "./app"
-import { addClass } from "./endpoints/addClass";
-import { addStudent } from "./endpoints/addStudent"
-import { addTeachers } from "./endpoints/addTeachers";
+import { adicionarTurma } from "./endpoints/adicionarTurma";
+import { adicionarEstudante } from "./endpoints/adicionarEstudante"
+import {  adicionarDocente } from "./endpoints/adicionarDocente";
+import { atualizaEstudante } from "./endpoints/atualizaEstudante";
+import { turmaDocente } from "./endpoints/atualizaDocente";
+import { idadeEstudante } from "./endpoints/idadeEstudante";
 
 
-app.post("/createStudent", addStudent);
 
+app.post("/criarTurma", adicionarTurma);
 
-app.post("/createTeacher", addTeachers);
+app.post("/criarEstudante", adicionarEstudante)
 
-app.post("/createClass", addClass);
+app.post("/criarDocente", adicionarDocente)
+
+app.put("/putEstudante", atualizaEstudante)
+
+app.put("/putDocente", turmaDocente )
+
+app.get('/estudante/:id', idadeEstudante)

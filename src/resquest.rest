@@ -1,0 +1,57 @@
+POST http://localhost:3003/criarTurma
+Content-Type: application/json
+
+{
+    "id": "004",
+    "nome": "paiva",
+    "data_inicio": "2021-04-23",
+    "data_final": "2021-09-29",
+    "modulo": "5",
+    "tipo": "noturna"
+}
+
+###
+POST http://localhost:3003/criarEstudante
+Content-Type: application/json
+
+{
+    "id": "000",
+    "nome": "jao",
+    "email":"email@email.com",
+    "data_nasc": "1959-03-29",
+    "turma_id": "004"
+}
+
+###
+
+POST http://localhost:3003/criarDocente
+Content-Type: application/json
+
+{
+    "id": "000",
+    "nome": "Mateus",
+    "email":"Mateus@email.com",
+    "data_nasc": "1990-03-29",
+    "turma_id": "004"
+}
+
+###
+PUT http://localhost:3003/putEstudante
+Content-Type: application/json
+
+{
+    "id": "000",
+    "turma_id":"003"
+}
+
+###
+PUT http://localhost:3003/putDocente
+Content-Type: application/json
+
+{
+    "id": "000",
+    "turma_id":"003"
+}
+
+###
+GET http://localhost:3003/estudante/000
